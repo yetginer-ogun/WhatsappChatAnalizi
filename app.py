@@ -21,6 +21,10 @@ if dosya is not None:
         kullanici_listesi.remove("Group Notification")
     except:
         pass
+    try:
+        kullanici_listesi.remove("Grup Bildirimi")
+    except:
+        pass
     kullanici_listesi.sort()
     kullanici_listesi.insert(0, "Tümü")
     
@@ -31,7 +35,7 @@ if dosya is not None:
     if st.sidebar.button("Analizi Göster"):
         mesaj_sayisi, kelime_sayisi, paylasilan_medya, links = stats.fetchstats(kullanici, df)
         
-        col1, col2, col3, col4 = st.beta_columns(4)
+        col1, col2, col3, col4 = st.columns(4)
         
         with col1:
             st.header("Toplam Mesaj")
@@ -59,7 +63,7 @@ if dosya is not None:
            
             with col1:
                 ax.bar(etkilesim_sayisi.index, etkilesim_sayisi.values, color = "red")
-                plt.xticks(location = "vertical")
+                plt.xticks(rotation = "vertical")
                 st.pyplot(fig)
                 
             with col2:
@@ -83,7 +87,7 @@ if dosya is not None:
         
         st.title("Emoji Analizi")
         
-        col1, col2 =st.beta_columns(2)
+        col1, col2 =st.columns(2)
         with col1:
             st.dataframe(emoji_df)
         with col2:
@@ -102,7 +106,7 @@ if dosya is not None:
         
         st.title("Aktiviteler")
         
-        col1, col2 = st.beta_columns(2)
+        col1, col2 = st.columns(2)
         
         with col1:
             st.header("En Yoğun Günler")

@@ -17,7 +17,10 @@ if dosya is not None:
     df = preprocess.preprocess(data)
     
     kullanici_listesi = df["Kullanıcı"].unique().tolist()
-    kullanici_listesi.remove("Group Notification")
+    try:
+        kullanici_listesi.remove("Group Notification")
+    except:
+        pass
     kullanici_listesi.sort()
     kullanici_listesi.insert(0, "Tümü")
     

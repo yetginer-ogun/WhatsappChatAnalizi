@@ -57,7 +57,7 @@ def populer_kelimeler(kullanici, df):
     if kullanici != "Tümü":
         df = df[df["Kullanıcı"] == kullanici]
         
-    temp = df[(df["Kullanıcı"] != "Group Notification") & (df['Message']!='<Medya dahil edilmedi>')]
+    temp = df[(df["Kullanıcı"] != "Group Notification") & (df['Mesaj']!='<Medya dahil edilmedi>')]
     
     kelimeler = []
     

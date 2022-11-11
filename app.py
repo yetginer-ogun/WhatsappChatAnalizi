@@ -62,16 +62,17 @@ if dosya is not None:
             col1, col2 = st.beta_columns(2)
            
             with col1:
-                ax.bar(etkilesim_sayisi.index, etkilesim_sayisi.values, color = "red")
+                ax.bar(etkilesim_sayisi.index[0:-1], etkilesim_sayisi.values[0:-1], color = "red")
                 plt.xticks(rotation = "vertical")
                 st.pyplot(fig)
                 
             with col2:
-                st.dataframe(newdf)
+                st.dataframe(newdf[0:-1])
                 
         st.title("Popüler Kelimeler")
         df_img = stats.wordcloud_olustur(kullanici, df)
         fig, ax = plt.subplots()
+        plt.axis("off")
         ax.imshow(df_img)
         st.pyplot(fig)
         

@@ -3,6 +3,10 @@
 3
 4
 5
+medya
+Medya
+dahil
+edilmedi
 ayy
 cok
 yok
